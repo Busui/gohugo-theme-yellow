@@ -40,6 +40,9 @@
     <div class="row">
       <div class="col-12 px-2 px-md-3">
           {{ .Content }}
+          {{ if .Page.Params.copyright }}
+          {{ partial "postCopyRight.html" . }}
+          {{ end }}
       </div>
     </div>
   </section>
@@ -52,35 +55,26 @@
       <div class="hr-box-sm hr-purple"></div>
   </div>
   <aside id="meta">
-      <div>
-      {{ with .Params.topics }}
-      <ul id="topics">
-        {{ range . }}
-          <li><a href="{{ "topics" | absURL}}{{ . | urlize }}">{{ . }}</a> </li>
+    <div class="row justify-content-between py-2 py-md-3">
+        {{ with .PrevInSection }}
+        <div class="col-12 col-md-5">
+          <span><svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-PrevioustrackFill"></use>
+            </svg>上一篇
+            <a class="text-dark custom-a" href="{{.Permalink}}"> {{.Title}}</a>
+          </span>
+        </div>
         {{ end }}
-      </ul>
-      {{ end }}
-      </div>
-      <div class="row justify-content-between py-2 py-md-3">
-          {{ with .PrevInSection }}
-          <div class="col-12 col-md-5">
-            <span><svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-PrevioustrackFill"></use>
-              </svg>上一篇
-              <a class="text-dark custom-a" href="{{.Permalink}}"> {{.Title}}</a>
-            </span>
-          </div>
-          {{ end }}
-          {{ with .NextInSection }}
-          <div class="col-12 col-md-5">
-            <span class="float-md-right"><svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-NexttrackFilled"></use>
-              </svg>下一篇
-              <a class="text-dark custom-a" href="{{.Permalink}}"> {{.Title}}</a>
-            </span>
-          </div>
-          {{ end }}
-      </div>
+        {{ with .NextInSection }}
+        <div class="col-12 col-md-5">
+          <span class="float-md-right"><svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-NexttrackFilled"></use>
+            </svg>下一篇
+            <a class="text-dark custom-a" href="{{.Permalink}}"> {{.Title}}</a>
+          </span>
+        </div>
+        {{ end }}
+    </div>
   </aside>
 </div>
 {{ end }}

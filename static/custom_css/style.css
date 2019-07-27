@@ -157,8 +157,12 @@ img.displayed {
     color: black;
 }
 
-.border-left {
-    border-left: 8px solid #dc3545 !important;
+.custom-border-left {
+    border-left: 8px solid #ffc107 !important;
+}
+
+.custom-shadow {
+    box-shadow: 0 0.4rem 1rem rgba(0,0,0,.15)!important;
 }
 
 .custom-btn {

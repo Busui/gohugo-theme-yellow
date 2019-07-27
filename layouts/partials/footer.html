@@ -1,8 +1,16 @@
 <footer class="border-top mt-3 py-2" style="text-align: center;">
-    <div><span style="font-size: 95%;">&COPY;{{ if eq (now.Format "2006") "2018"}}2018{{ else }}2018-{{ now.Format "2006" }}{{ end }}</span></div>
+    <div><span style="font-size: 95%;">Copyright &COPY;{{ if eq (now.Format "2006") "2018"}}2018{{ else }}2018-{{ now.Format "2006" }}{{ end }}</span></div>
     <div>
-        <span style="font-size: 90%">Power By <a href="https://gohugo.io/">Hugo</a>&shortmid;</span>
-        <span style="font-size: 90%">Theme By <a href="https://github.com/Busui/gohugo-theme-yellow">Busui</a></span>
+        <span style="font-size: 90%">
+        <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-powerstation"></use>
+        </svg>
+        Power By <a href="https://gohugo.io/">Hugo</a>&shortmid;</span>
+        <span style="font-size: 90%">
+        <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-library_theme_select"></use>
+        </svg>
+        Theme By <a href="https://github.com/Busui/gohugo-theme-yellow">Busui</a></span>
     </div>
     
 </footer>
