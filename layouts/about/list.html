@@ -1,0 +1,11 @@
+{{ define "main" }}
+<div class="container">
+    {{ with .Site.GetPage "/about" }}
+    <div class="row">
+        <div class="col-12 px-0">
+        {{ .Content }}
+        </div>
+    </div>
+    {{ end }}
+</div>
+{{ end }}

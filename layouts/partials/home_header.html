@@ -1,0 +1,46 @@
+<div class="container mt-1 mt-md-5" id="index_home">
+    <div class="row justify-content-center">
+        <div class="col-6 text-center">
+            <div class="my-3" style="font-size:2em;">
+                
+                    <a href="{{ .Site.BaseURL }}" class="px-3 px-md-5 badge custom-badge-dark text-wrap py-1 py-md-2">codepool</a>
+            
+            </div>
+        </div>
+        <div class="w-100"></div>
+        <div>
+            <p class="text-muted text-center">
+                咱也不敢说，咱也没敢问！
+            </p>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <nav class="navbar navbar-expand-md justify-content-center">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span> 
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-xinxiaoxixiangxiajiantou"></use>
+                    </svg>
+                </span>
+            </button>
+            <div class="border-warning collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav d-flex">
+                    {{ $currentPage := . }}
+                    {{ range .Site.Menus.main }}
+                    <li class="{{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}active{{ end }}">
+                        <a class="nav-link custom-link-color " href="{{ .URL }}" style="text-align: center;">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="{{ .Post }}"></use>
+                            </svg>
+                            <span>{{ .Name }}</span>
+                            {{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}
+                                <span class="sr-only">(current)</span>
+                            {{ end }}
+                        </a>
+                    </li>
+                    {{ end }}
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>

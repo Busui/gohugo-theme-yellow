@@ -1,0 +1,86 @@
+{{ define "main" }}
+<div class="container-fluid px-1 px-sm-3">
+  <section id="main">
+    <h1 id="title">{{ .Title }}</h1>
+    <div class="row justify-content-end mx-2 mx-sm-4">
+        {{ with .Params.tags }}
+          <span class="custom-span-meta">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-biaoqian3"></use>
+              </svg>
+              {{ range . }}
+              <a class="custom-text-muted custom-a" href="{{ "tags" | absURL }}/{{ . }}">{{ . }}</a>&shortmid;
+              {{ end }}
+          </span>&nbsp;&nbsp;
+        {{ end }}
+        {{ with .Params.categories }}
+          <span class="custom-span-meta">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-fenlei2"></use>
+              </svg>
+              {{ range . }}
+              <a class="custom-text-muted custom-a" href="{{ "categories" | absURL }}/{{ . }}">{{ . }}</a>&shortmid;
+              {{ end }}
+          </span>&nbsp;&nbsp;
+        {{ end }}
+      <span class="custom-span-meta">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-time"></use>
+        </svg>
+        {{- .Date.Format "2006-01-02" -}}
+      </span>&nbsp;&nbsp;
+      <span class="custom-span-meta">
+          <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-count"></use>
+          </svg>
+          {{- .WordCount -}} 字
+      </span>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-12 px-2 px-md-3">
+          {{ .Content }}
+      </div>
+    </div>
+  </section>
+  <div class="hr-box">
+      <div class="hr-box-sm hr-red"></div>
+      <div class="hr-box-sm hr-orange"></div>
+      <div class="hr-box-sm hr-yellow "></div>
+      <div class="hr-box-sm hr-green "></div>
+      <div class="hr-box-sm hr-blue "></div>
+      <div class="hr-box-sm hr-purple"></div>
+  </div>
+  <aside id="meta">
+      <div>
+      {{ with .Params.topics }}
+      <ul id="topics">
+        {{ range . }}
+          <li><a href="{{ "topics" | absURL}}{{ . | urlize }}">{{ . }}</a> </li>
+        {{ end }}
+      </ul>
+      {{ end }}
+      </div>
+      <div class="row justify-content-between py-2 py-md-3">
+          {{ with .PrevInSection }}
+          <div class="col-12 col-md-5">
+            <span><svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-PrevioustrackFill"></use>
+              </svg>上一篇
+              <a class="text-dark custom-a" href="{{.Permalink}}"> {{.Title}}</a>
+            </span>
+          </div>
+          {{ end }}
+          {{ with .NextInSection }}
+          <div class="col-12 col-md-5">
+            <span class="float-md-right"><svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-NexttrackFilled"></use>
+              </svg>下一篇
+              <a class="text-dark custom-a" href="{{.Permalink}}"> {{.Title}}</a>
+            </span>
+          </div>
+          {{ end }}
+      </div>
+  </aside>
+</div>
+{{ end }}

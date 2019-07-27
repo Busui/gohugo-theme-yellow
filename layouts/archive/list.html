@@ -1,0 +1,31 @@
+{{ define "main" }}
+<div class="row justify-content-center">
+    <div class="col-12 col-md-10 pb-5">
+        <div class="gradient-box">
+            <div>
+                {{ with .Site.GetPage "/posts" }}
+                    {{ range .Pages.GroupByDate "2006" }}
+                    <section class="ml-2 mt-3"><span class="font-weight-bold">{{ .Key }}</span></section>
+                        {{ $year := printf "%s-" .Key }}
+                        {{ range .Pages }}
+                        <div class="row justify-content-center px-2 ml-2 ml-md-4 pb-1">
+                            <div class="col-8">
+                                <svg class="icon" aria-hidden="true">
+                                    <use xlink:href="#icon-wenzhang2"></use>
+                                </svg>
+                                <a class="text-dark custom-a" href="{{ .Permalink }}">{{ .Title }}</a>
+                            </div>
+                            <div class="col-4">
+                                <span class="float-right text-muted">
+                                        {{ strings.TrimPrefix  $year (.Date.Format "2006-01-02")}}
+                                </span>
+                            </div>
+                        </div>
+                        {{ end }}
+                    {{ end }}
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}

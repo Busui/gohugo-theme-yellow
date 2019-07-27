@@ -1,0 +1,28 @@
+{{ define "main" }}
+<div class="row justify-content-center my-2 pb-4 my-md-4" style="height: 60vh;">
+    <div class="col-10" id="accordionExample">
+        {{ range $key, $value := .Site.Taxonomies.categories }}
+            <div class="py-1">
+                <div class="px-auto badge badge-pill badge-warning text-left" id="{{ $key }}-id" style="width: 100%;">  
+                    <button class="btn py-0" type="button" data-toggle="collapse" data-target="#{{ $key }}"
+                        aria-expanded="true" aria-controls="{{ $key }}">
+                        <svg class="icon" aria-hidden="true" style="font-size: 18px;">
+                            <use xlink:href="#icon-shouzhi2"></use>
+                        </svg>
+                        <span class="badge badge-light" style="font-size: 16px;">{{ $key }}</span>
+                    </button>
+                </div>
+
+                <div id="{{ $key }}" class="collapse ml-4 mt-2 rounded" aria-labelledby="{{ $key }}-id" data-parent="#accordionExample" style="background-color: rgb(232, 231, 215);">
+                    {{ range $value.Pages }}
+                        <ul hugo-nav="{{ .RelPermalink}}" class="my-1 badge badge-light ml-1">
+                            <a href="{{ .Permalink}}" class="text-dark"  style="font-size: 18px;">{{ .LinkTitle }}</a>
+                        </ul>
+                        <div class="w-100"></div>
+                    {{ end }}
+                </div>           
+            </div>
+        {{ end }}
+    </div>
+</div>
+{{ end }}

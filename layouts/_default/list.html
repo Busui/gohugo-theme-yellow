@@ -1,0 +1,19 @@
+{{ define "main" }}
+<div class="container-fluid px-0 px-sm-3">
+    <article>
+        <section>
+            {{ .Content }}
+        </section>
+        <section>
+            {{ range .Paginator.Pages }}
+            <div>
+                {{ .Render "summary"}}
+            </div>
+            {{ end }}
+        </section>
+    </article>
+    <div class="row justify-content-center">
+        {{ template "_internal/pagination.html" . }}
+    </div>
+</div>
+{{ end }}

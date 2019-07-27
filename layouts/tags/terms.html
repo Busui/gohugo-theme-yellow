@@ -1,0 +1,34 @@
+{{ define "main" }}
+{{- if gt (len .Site.Taxonomies.tags) 0 -}}
+    {{- $fontUnit := "rem" -}}
+    {{- $largestFontSize := 1.9 -}}
+    {{- $smallestFontSize := 0.8 -}}
+    {{- $fontSizeSpread := sub $largestFontSize $smallestFontSize -}}
+    {{- $maxCount := 10 -}}
+    <!--<div>Max tag count: {{ $maxCount }}</div>-->
+
+    {{- $minCount := 1 -}}
+    <!--<div>Min tag count: {{ $minCount }}</div>-->
+
+    {{- $countSpread := sub $maxCount $minCount -}}
+    <!--<div>Tag count spread: {{ $countSpread }}</div>-->
+
+    {{- $.Scratch.Set "sizeStep" 0 -}}
+    {{- if gt $countSpread 0 -}}
+        {{- $.Scratch.Set "sizeStep" ( div $fontSizeSpread $countSpread ) -}}
+    {{- end -}}
+    {{- $sizeStep := ( $.Scratch.Get "sizeStep" ) -}}
+    <!--<div>Font step: {{ $sizeStep }}</div>-->
+    <div class="row justify-content-center pt-2 pb-5">
+        <div class="col-11 shadow border-top" style="min-height: 60vh">
+            <div class="p-2 px-md-4 mt-5 mb-3" style="text-align: center;">目前共计{{ len .Site.Taxonomies.tags }}个标签</div>
+            {{ range .Site.Taxonomies.tags }}
+            {{ $currentTagCount := .Count }}
+            {{- $currentFontSize := (add $smallestFontSize (mul (sub $currentTagCount $minCount) $sizeStep) ) -}}
+            <a href="{{ .Page.RelPermalink }}" class="d-inline-block mx-3 mx-md-4 p-1 custom-a" style="font-size:{{$currentFontSize}}{{$fontUnit}}">{{ .Page.Title }}</a>
+            {{ end }}
+        </div>
+    </div>
+{{ end }}
+{{ end }}
+
