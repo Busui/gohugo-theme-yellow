@@ -189,7 +189,7 @@ img.displayed {
 
 .custom-btn-primary {
     color: black;
-    background-color: #ffc10796;
+    background-color: #ffc107;
     border-color: #ce7426;
     font-weight: bold;
     font-size: 0.9em;
@@ -261,6 +261,9 @@ a.custom-a:hover {
 /* overwrite default */
 a {
     color: #ff9c00;
+}
+.rounded-lg {
+    border-radius: 1rem!important;
 }
 
 
