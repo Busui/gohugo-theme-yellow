@@ -1,0 +1,7 @@
+{{ $class := (.Get "class" | default "px-1 px-md-2 pt-1 custom-shadow rounded-right text-muted custom-border-left") }}
+{{ $color := (.Get "color" | default "bg-light")}}
+<blockquote class="{{ printf "%s %s" $class $color }}">
+    <p>
+        {{- .Inner -}}
+    </p>
+</blockquote>

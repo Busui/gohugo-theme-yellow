@@ -299,3 +299,7 @@ a {
     background-color:yellow; /* Add a dark-grey background on hover */
     border: #FF5852 2px solid;
 }
+
+.custom-shadow {
+    box-shadow: 0 .1rem 0.1rem rgba(0,0,0,.15)!important;
+}
