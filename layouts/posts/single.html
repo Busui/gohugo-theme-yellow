@@ -39,6 +39,11 @@
     <br>
     <div class="row">
       <div class="col-12 px-2 px-md-3">
+          {{ with .Params.summary }}
+          <div class="text-muted p-1 p-md-2">
+            {{ . }}
+          </div>
+          {{ end }}
           {{ .Content }}
           {{ if .Page.Params.copyright }}
           {{ partial "postCopyRight.html" . }}
