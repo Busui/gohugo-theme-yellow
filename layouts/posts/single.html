@@ -71,8 +71,14 @@
         </div>
         {{ end }}
         {{ with .NextInSection }}
+        {{ if .PrevInSection }}
         <div class="col-12 col-md-5">
-          <span class="float-md-right"><svg class="icon" aria-hidden="true">
+            <span class="float-md-right">
+        {{ else }}
+        <div class="col-12">
+            <span>
+        {{ end }}
+            <svg class="icon" aria-hidden="true">
               <use xlink:href="#icon-NexttrackFilled"></use>
             </svg>下一篇
             <a class="text-dark custom-a" href="{{.Permalink}}"> {{.Title}}</a>
