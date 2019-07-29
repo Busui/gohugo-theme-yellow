@@ -2,6 +2,6 @@
 {{ $color := (.Get "color" | default "bg-light")}}
 <blockquote class="{{ printf "%s %s" $class $color }}">
     <p>
-        {{- .Inner -}}
+        {{- .Inner | markdownify -}}
     </p>
 </blockquote>
