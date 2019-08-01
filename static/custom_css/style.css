@@ -95,13 +95,14 @@ H4 {
 
 img {
     display: block;
-    box-shadow: 0 0 8px #4f5522;
+    box-shadow: 0 0 4px #4f5522;
     border-radius: 6px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 10px;
     margin-bottom: 10px;
-    -webkit-box-shadow: 0 0 8px #4f5522;
+    -webkit-box-shadow: 0 0 4px #4f5522;
+    max-width: 70%;
 }
 
 div>p>img {
