@@ -1,21 +1,70 @@
 # theme.toml template for a Hugo theme
 # See https://github.com/gohugoio/hugoThemes#themetoml for an example
 
-name = "Gohugo Theme Busui"
-license = "MIT"
-licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE"
-description = ""
-homepage = "http://example.com/"
-tags = []
-features = []
-min_version = "0.41"
+baseURL = "https://example.com"
+languageCode = "zh-cn"
+defaultContentLanguage = "zh-cn"
+title = "Your Title"                           # site title  # 网站标题
+theme = "yellow"
+hasCJKLanguage = true                # has chinese/japanese/korean ? # 自动检测是否包含 中文\日文\韩文
+summaryLength = 100
+paginate = 5                         # shows the number of articles  # 首页显示文章数量
+enableEmoji = true
+googleAnalytics = ""                   # your google analytics id
+disqusShortname = ""                 # your discuss shortname
 
-[author]
-  name = ""
-  homepage = ""
+[author]                             # essential                     # 必需
+  name = "Your name"
 
-# If porting an existing theme
-[original]
-  name = ""
-  homepage = ""
-  repo = ""
+[blackfriday]
+  smartypants = true
+
+[[menu.main]]                        # config your menu  # 配置菜单
+  name = "首页"
+  weight = 10
+  identifier = "home"
+  url = "/"
+  post = "#icon-ziyuan2"
+[[menu.main]]
+  name = "分类"
+  weight = 20
+  identifier = "categories"
+  url = "/categories/"
+  post = "#icon-ziyuan"
+[[menu.main]]
+  name = "标签"
+  weight = 30
+  identifier = "tags"
+  url = "/tags/"
+  post = "#icon-ziyuan4"
+[[menu.main]]
+  name = "归档"
+  weight = 40
+  identifier = "archive"
+  url = "/archive/"
+  post = "#icon-ziyuan5"
+[[menu.main]]
+  name = "关于"
+  weight = 50
+  identifier = "about"
+  url = "/about/"
+  post = "#icon-ziyuan1"
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  archive = "archive"
+
+[params]
+  custom_css = ["custom_css/style.css", "custom_css/syntax.css"]
+
+# mathjax
+  enableMathJax = true                                                 # enable mathjax  # 是否使用mathjax（数学公式）
+
+  enableSummary = true                                                 # display the article summary  # 是否显示文章摘要
+  
+
+[highlight]
+  pygmentsUseClasses = true
+  pygmentsCodeFences = true     # 开启```languageCode```模式
+  pygmentsCodefencesGuessSyntax = true
