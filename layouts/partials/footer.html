@@ -1,9 +1,11 @@
 <footer class="border-top mt-3 py-2" style="text-align: center;">
     <div><span>Copyright&nbsp;&COPY;&nbsp;{{ if eq (now.Format "2006") "2019"}}2019{{ else }}2019-{{ now.Format "2006" }}{{ end }}</span></div>
     <div>
-        <span>
-            粤ICP备19088648号-1	
-        </span>
+        {{ with .Site.Params.beian }}
+            <span>
+                {{ . }}
+            </span>
+        {{ end }}
     </div>
     <div>
         <span>
