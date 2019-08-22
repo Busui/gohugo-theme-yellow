@@ -297,3 +297,11 @@ a {
 .custom-shadow {
     box-shadow: 0 .1rem 0.1rem rgba(0,0,0,.15)!important;
 }
+
+p>code {
+    background-color: rgb(245, 239, 212);
+    color: #000;
+    border-radius: 4px;
+    padding: 1px 1px;
+    margin: 0px 1px;
+}

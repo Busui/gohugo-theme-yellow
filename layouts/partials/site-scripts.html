@@ -2,3 +2,4 @@
 {{ range $script.js }}
   <script src="{{ relURL (printf "%s" .) }}"></script>
 {{ end }}
+<script>hljs.initHighlightingOnLoad();</script>
