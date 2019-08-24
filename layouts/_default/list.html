@@ -1,21 +1,19 @@
 {{ define "main" }}
-<div class="container-fluid px-0 px-sm-3">
-    <article>
+<main class="container-fluid px-0 px-sm-3">
+    <section>
         {{ with .Content }}
             <section>
                 {{ . }}
             </section>
         {{ end }}
-        <section>
-            {{ range .Paginator.Pages }}
-            <div>
-                {{ .Render "summary"}}
-            </div>
-            {{ end }}
-        </section>
-    </article>
+        {{ range .Paginator.Pages }}
+        <article>
+            {{ .Render "summary"}}
+        </article>
+        {{ end }}
+    </section>
     <div class="row justify-content-center mt-4 mt-md-5">
-        {{ template "_internal/pagination.html" . }}
+        {{- template "_internal/pagination.html" . -}}
     </div>
-</div>
+</main>
 {{ end }}

@@ -45,11 +45,11 @@
   </head>
 
   <body>
-      <main class="container" id="test_home">
+      <div class="container" id="test_home">
         {{ block "home_header" . }}{{ partial "home_header.html" .}}{{ end }}
         {{ block "main" . }}{{ end }}
         {{ block "footer" . }}{{ partialCached "footer.html" . }}{{ end }}
-      </main>
+      </div>
       {{ block "backtotop" .}}{{ partial "backToTop.html" }}{{ end }}
       {{ block "scripts" . }}{{ partialCached "site-scripts.html" . }}{{ end }}
   </body>

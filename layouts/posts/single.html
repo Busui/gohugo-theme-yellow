@@ -1,6 +1,6 @@
 {{ define "main" }}
 <main class="container-fluid px-1 px-sm-3">
-  <section id="main">
+  <article id="main">
     <h1 id="title">{{ .Title }}</h1>
     <div class="row justify-content-end mx-2 mx-sm-4">
         {{ with .Params.tags }}
@@ -50,7 +50,7 @@
           {{ end }}
       </div>
     </div>
-  </section>
+  </article>
   <div class="hr-box">
       <div class="hr-box-sm hr-red"></div>
       <div class="hr-box-sm hr-orange"></div>

@@ -305,3 +305,9 @@ p>code {
     padding: 1px 1px;
     margin: 0px 1px;
 }
+
+.footerest {
+    /* background-color: #f5e1c8; */
+    font-size: 0.5em;
+    font-weight: bold;
+}
