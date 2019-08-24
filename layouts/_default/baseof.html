@@ -49,8 +49,8 @@
         {{ block "home_header" . }}{{ partial "home_header.html" .}}{{ end }}
         {{ block "main" . }}{{ end }}
         {{ block "footer" . }}{{ partialCached "footer.html" . }}{{ end }}
-        {{ block "backtotop" .}}{{ partial "backToTop.html" }}{{ end }}
-        {{ block "scripts" . }}{{ partialCached "site-scripts.html" . }}{{ end }}
-      </main>    
+      </main>
+      {{ block "backtotop" .}}{{ partial "backToTop.html" }}{{ end }}
+      {{ block "scripts" . }}{{ partialCached "site-scripts.html" . }}{{ end }}
   </body>
 </html>
