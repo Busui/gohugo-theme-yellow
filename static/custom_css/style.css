@@ -37,6 +37,10 @@ H1 {
     font-weight: bold;
 }
 
+body.custom-mobile  H1 {
+    font-size: 1.2em;
+}
+
 H2 {
     margin-bottom: 0px;
     padding: 3px;
@@ -54,6 +58,10 @@ H2 {
     font-weight: bold;
 }
 
+body.custom-mobile  H2 {
+    font-size: 1.2em;
+}
+
 
 H3 {
     border-left: 4px solid purple;
@@ -69,6 +77,10 @@ H3 {
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     font-weight: bold;
+}
+
+body.custom-mobile  H3 {
+    font-size: 1.1em;
 }
 
 

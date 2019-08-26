@@ -45,6 +45,12 @@
   </head>
 
   <body>
+       <script>
+          if (/android/i.test(navigator.userAgent) || /mobile/i.test(navigator.userAgent))
+          {
+              document.body.classList.add('custom-mobile');
+          }
+       </script>
       <div class="container" id="test_home">
         {{ block "home_header" . }}{{ partial "home_header.html" .}}{{ end }}
         {{ block "main" . }}{{ end }}
