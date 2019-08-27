@@ -9,7 +9,7 @@
                 <use xlink:href="#icon-biaoqian3"></use>
               </svg>
               {{ range . }}
-              <a class="custom-text-muted custom-a" href="{{ "tags" | absURL }}/{{ . }}">{{ . }}</a>&shortmid;
+              <a class="custom-text-muted custom-a" href="{{ "tags" | absURL }}/{{ replace . " " "-" | lower }}/">{{ . }}</a>&shortmid;
               {{ end }}
           </span>&nbsp;&nbsp;
         {{ end }}
@@ -19,7 +19,7 @@
                 <use xlink:href="#icon-fenlei2"></use>
               </svg>
               {{ range . }}
-              <a class="custom-text-muted custom-a" href="{{ "categories" | absURL }}/{{ . }}">{{ . }}</a>&shortmid;
+              <a class="custom-text-muted custom-a" href="{{ "categories" | absURL }}/">{{ . }}</a>&shortmid;
               {{ end }}
           </span>&nbsp;&nbsp;
         {{ end }}

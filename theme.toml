@@ -1,20 +1,17 @@
-# theme.toml template for a Hugo theme
-# See https://github.com/gohugoio/hugoThemes#themetoml for an example
-
-baseURL = "https://example.com"
+baseURL = "https://busui.github.com"
 languageCode = "zh-cn"
 defaultContentLanguage = "zh-cn"
-title = "Your Title"                           # site title  # 网站标题
+title = "CodePool"                           # site title  # 网站标题
 theme = "yellow"
 hasCJKLanguage = true                # has chinese/japanese/korean ? # 自动检测是否包含 中文\日文\韩文
 summaryLength = 100
-paginate = 5                         # shows the number of articles  # 首页显示文章数量
+paginate = 5                         # 首页显示文章数量
 enableEmoji = true
-googleAnalytics = ""                   # your google analytics id
+googleAnalytics = "UA-144639639-1"                   # your google analytics id
 disqusShortname = ""                 # your discuss shortname
 
 [author]                             # essential                     # 必需
-  name = "Your name"
+  name = "Busui"
 
 [blackfriday]
   smartypants = true
@@ -56,7 +53,12 @@ disqusShortname = ""                 # your discuss shortname
   archive = "archive"
 
 [params]
-  custom_css = ["custom_css/style.css", "custom_css/syntax.css"]
+  custom_css = ["custom_css/style.css", "custom_css/github.css"]
+  env = "production"
+  beian = "粤ICP备19088648号-1"                           # 底部备案号
+  welcome = "欢迎来访我的网站，本站所有言行仅代表个人行为，无关任何其他个体/组织。"
+  siteBrand = "codepool"                                 # 网站顶部招牌名
+  motto = "我至今无法否认学习是一件快乐的事儿"                 # 顶部签名
 
 # mathjax
   enableMathJax = true                                                 # enable mathjax  # 是否使用mathjax（数学公式）
