@@ -17,7 +17,7 @@ body {
 
 P,
 li {
-    line-height: 1.8;
+    line-height: 1.7;
 }
 
 H1 {
@@ -35,6 +35,14 @@ H1 {
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     font-weight: bold;
+}
+
+body.custom-mobile {
+    font-size: 16px;
+}
+
+body.custom-mobile p,li {
+    line-height: 1.5;
 }
 
 body.custom-mobile  H1 {
@@ -59,7 +67,7 @@ H2 {
 }
 
 body.custom-mobile  H2 {
-    font-size: 1.2em;
+    font-size: 1.3em;
 }
 
 
@@ -80,7 +88,7 @@ H3 {
 }
 
 body.custom-mobile  H3 {
-    font-size: 1.1em;
+    font-size: 1.2em;
 }
 
 
@@ -98,6 +106,10 @@ H4 {
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     font-weight: bold;
+}
+
+body.custom-mobile  H4 {
+    font-size: 0.9em;
 }
 
 
@@ -185,6 +197,10 @@ img.displayed {
     font-size: 0.93em;
 }
 
+body.custom-mobile .custom-post-meta {
+    font-size: 0.8em;
+}
+
 .custom-link-color {
     color: #000;
 }
@@ -193,8 +209,16 @@ img.displayed {
     font-size: 1.2em;
 }
 
+body.custom-mobile .custom-sumary-title {
+    font-size: 1.1em;
+}
+
 .custom-text-muted {
     color: #5a5f63;
+}
+
+body.custom-mobile .mobile-custom-size {
+    font-size: 17px;
 }
 
 .custom-btn-primary {
@@ -209,6 +233,7 @@ img.displayed {
     color: rgba(0, 0, 0, .9);
     background-color: #ffc107;
 }
+
 
 a.custom-a {
     text-decoration: none;
