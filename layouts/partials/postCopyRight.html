@@ -1,10 +1,11 @@
-<div class="container custom-border-left border-warning m-2 my-md-4 p-2" style="background-color: antiquewhite;width: auto;">
+<div class="container custom-copyright-style border-warning m-2 my-md-4 p-2 shadow-sm">
     <div >
         <span>
         <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-woshizuozhe"></use>
         </svg>作者：
-        {{- .Page.Params.Author }}</span>
+        <a href="{{- .Page.Params.AuthorLink -}}">{{- .Page.Params.Author }}</a>
+        </span>
     </div>
     <div>
         <svg class="icon" aria-hidden="true">

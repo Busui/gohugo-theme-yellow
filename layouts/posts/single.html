@@ -11,7 +11,7 @@
               {{ range . }}
               <a class="custom-text-muted custom-a" href="{{ "tags" | absURL }}/{{ replace . " " "-" | lower }}/">{{ . }}</a>&shortmid;
               {{ end }}
-          </span>&nbsp;&nbsp;
+          </span>&nbsp;
         {{ end }}
         {{ with .Params.categories }}
           <span class="custom-span-meta">
@@ -21,14 +21,14 @@
               {{ range . }}
               <a class="custom-text-muted custom-a" href="{{ "categories" | absURL }}/">{{ . }}</a>&shortmid;
               {{ end }}
-          </span>&nbsp;&nbsp;
+          </span>&nbsp;
         {{ end }}
       <span class="custom-span-meta">
         <svg class="icon" aria-hidden="true">
           <use xlink:href="#icon-time"></use>
         </svg>
         {{- .Date.Format "2006-01-02" -}}
-      </span>&nbsp;&nbsp;
+      </span>&nbsp;
       <span class="custom-span-meta">
           <svg class="icon" aria-hidden="true">
               <use xlink:href="#icon-count"></use>
@@ -39,15 +39,10 @@
     <br>
     <div class="row">
       <div class="col-12 px-2 px-md-3">
-          {{ with .Params.summary }}
-          <div class="text-muted p-1 p-md-2">
-            {{ . }}
-          </div>
-          {{ end }}
           {{ .Content }}
-          {{ if .Page.Params.copyright }}
-          {{ partial "postCopyRight.html" . }}
-          {{ end }}
+          {{- if .Page.Params.copyright -}}
+          {{- partial "postCopyRight.html" . -}}
+          {{- end -}}
       </div>
     </div>
   </article>

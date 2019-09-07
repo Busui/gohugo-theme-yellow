@@ -60,12 +60,17 @@
               document.body.classList.add('custom-mobile');
           }
        </script>
-      <div class="container" id="test_home">
+      <div class="container" id="content">
         {{ block "home_header" . }}{{ partial "home_header.html" .}}{{ end }}
         {{ block "main" . }}{{ end }}
         {{ block "footer" . }}{{ partialCached "footer.html" . }}{{ end }}
       </div>
       {{ block "backtotop" .}}{{ partial "backToTop.html" }}{{ end }}
       {{ block "scripts" . }}{{ partialCached "site-scripts.html" . }}{{ end }}
+      {{ if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env "production")  }}
+        {{ range .Site.Params.custom_js }}
+          <script src="{{ relURL ($.Site.BaseURL) }}{{ . }}"></script>
+        {{ end }}
+      {{ end }}
   </body>
 </html>

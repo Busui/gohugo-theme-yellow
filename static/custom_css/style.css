@@ -1,3 +1,4 @@
+/* overwrite the default */
 * {
     box-sizing: border-box;
 }
@@ -8,7 +9,6 @@ table {
 }
 
 /* end reset CSS */
-
 body {
     font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
     font-size: 18px;
@@ -37,18 +37,6 @@ H1 {
     font-weight: bold;
 }
 
-body.custom-mobile {
-    font-size: 16px;
-}
-
-body.custom-mobile p,li {
-    line-height: 1.5;
-}
-
-body.custom-mobile  H1 {
-    font-size: 1.2em;
-}
-
 H2 {
     margin-bottom: 0px;
     padding: 3px;
@@ -66,11 +54,6 @@ H2 {
     font-weight: bold;
 }
 
-body.custom-mobile  H2 {
-    font-size: 1.3em;
-}
-
-
 H3 {
     border-left: 4px solid purple;
     border-bottom: 1px LightGrey solid;
@@ -86,11 +69,6 @@ H3 {
     margin-inline-end: 0px;
     font-weight: bold;
 }
-
-body.custom-mobile  H3 {
-    font-size: 1.2em;
-}
-
 
 H4 {
     border-left: 4px solid purple;
@@ -108,10 +86,10 @@ H4 {
     font-weight: bold;
 }
 
-body.custom-mobile  H4 {
-    font-size: 0.9em;
+div>p>img {
+    max-width: 80%;
+    height: auto;
 }
-
 
 img {
     display: block;
@@ -125,42 +103,120 @@ img {
     max-width: 70%;
 }
 
-div>p>img {
-    max-width: 80%;
-    height: auto;
-}
-
 img.displayed {
     text-align: center;
     display: block;
 }
 
-/* for icon */
-.icon {
-    width: 1em;
-    height: 1em;
-    vertical-align: -0.15em;
-    fill: currentColor;
-    overflow: hidden;
+p>code {
+    background-color: rgb(245, 239, 212);
+    color: #000;
+    border-radius: 4px;
+    padding: 1px 1px;
+    margin: 0px 1px;
 }
 
-#test_home {
-    background-color: white;
-    padding-bottom: 0em;
-    margin-bottom: 0em;
+li>code {
+    background-color: #845ec2;
+    color: #eee;
+    border-radius: 2px;
+    padding: 1px 1px;
+    margin: 0px 1px;
 }
 
-#index_home {
-    /* height: calc(100vh - 0px); */
-    background-color: white;
+blockquote {
+    padding-left: 10px;
+    border-left: 5px solid #dee2e6;
+    color: #6a737d;
+    margin-left: 10px;
+}
+
+strong {
+    color: black;
+}
+
+
+
+/* overwrite default */
+a {
+    color: #845ec2;
+}
+
+a:hover {
+    /* font-weight: bold; */
+    color: #FFC75F;
+}
+
+
+
+/* for mobile end */
+body.custom-mobile {
+    font-size: 16px;
+}
+
+body.custom-mobile p,li {
+    line-height: 1.5;
+}
+
+body.custom-mobile  H1 {
+    font-size: 1.2em;
+}
+
+body.custom-mobile  H2 {
+    font-size: 1.3em;
+}
+
+body.custom-mobile  H3 {
+    font-size: 1.2em;
+}
+
+body.custom-mobile  H4 {
+    font-size: 0.9em;
+}
+
+body.custom-mobile .mobile-custom-size {
+    font-size: 17px;
+}
+
+body.custom-mobile .custom-post-meta {
+    font-size: 0.8em;
+}
+
+body.custom-mobile .custom-sumary-title {
+    font-size: 1.1em;
+}
+
+
+
+/* for active */
+.active {
+    border-bottom: 3px solid #FFC75F !important
+}
+
+
+
+/* my custom class */
+a.custom-a {
+    text-decoration: none;
+    border-bottom: 1px #FF9000 solid;
+}
+
+a.custom-a:hover {
+    text-decoration: none;
+    border-bottom: 2px #FF9000 solid;
 }
 
 .custom-summary-color {
     background-color: #f7f5ec;
 }
 
-.active {
-    border-bottom: 3px solid yellow !important
+.custom-shadow {
+    box-shadow: 0 .1rem 0.1rem rgba(0,0,0,.15)!important;
+}
+
+/* for footer.html */
+.custom-footer-a {
+    color: #FFC75F;
 }
 
 .page-item.active {
@@ -175,8 +231,12 @@ img.displayed {
     color: black;
 }
 
-.custom-border-left {
-    border-left: 8px solid #ffc107 !important;
+.custom-copyright-style {
+    border-left: 3px solid #FFC75F !important;
+    border-right: 3px solid #FFC75F !important;
+    border-radius: 3px;
+    background-color: antiquewhite;
+    width: auto;
 }
 
 .custom-shadow {
@@ -197,10 +257,6 @@ img.displayed {
     font-size: 0.93em;
 }
 
-body.custom-mobile .custom-post-meta {
-    font-size: 0.8em;
-}
-
 .custom-link-color {
     color: #000;
 }
@@ -209,21 +265,13 @@ body.custom-mobile .custom-post-meta {
     font-size: 1.2em;
 }
 
-body.custom-mobile .custom-sumary-title {
-    font-size: 1.1em;
-}
-
 .custom-text-muted {
     color: #5a5f63;
 }
 
-body.custom-mobile .mobile-custom-size {
-    font-size: 17px;
-}
-
 .custom-btn-primary {
     color: black;
-    background-color: #ffc107;
+    background-color: #FFC75F;
     border-color: #ce7426;
     font-weight: bold;
     font-size: 0.9em;
@@ -231,24 +279,23 @@ body.custom-mobile .mobile-custom-size {
 
 .custom-badge-dark {
     color: rgba(0, 0, 0, .9);
-    background-color: #ffc107;
+    background-color: #FFC75F;
 }
 
 
-a.custom-a {
-    text-decoration: none;
-    border-bottom: 1px #FF9000 solid;
-}
 
-a.custom-a:hover {
-    text-decoration: none;
-    border-bottom: 2px #FF9000 solid;
-}
-
+/* overwrite bootstrap */
 .page-link {
     color: #000;
 }
 
+.rounded-lg {
+    border-radius: 1rem!important;
+}
+
+
+
+/* for 分隔栏 */
 .hr-box {
     display: flex;
     width: 100%;
@@ -293,15 +340,6 @@ a.custom-a:hover {
     background-color: #9E44C4;
 }
 
-/* overwrite default */
-a {
-    color: #ff9c00;
-}
-.rounded-lg {
-    border-radius: 1rem!important;
-}
-
-
 .gradient-box {
     background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.33, rgb(173, 46, 14)), color-stop(0.67, rgb(255, 251, 1)));
     background-image: -moz-linear-gradient(center bottom, rgb(173, 46, 14) 33%, rgb(255, 251, 1) 67%);
@@ -311,6 +349,16 @@ a {
     background: #fff; 
 }
 
+
+/* for the lowest area content of my web */
+.footerest {
+    /* background-color: #f5e1c8; */
+    font-size: 0.5em;
+    font-weight: bold;
+}
+
+
+/* for backtptop.html */
 #myBtn {
     display: none; /* Hidden by default */
     position: fixed; /* Fixed/sticky position */
@@ -319,7 +367,7 @@ a {
     z-index: 99; /* Make sure it does not overlap */
     border: none; /* Remove borders */
     outline: none; /* Remove outline */
-    background-color: #ffa252; /* Set a background color */
+    background-color: #FFC75F; /* Set a background color */
     color: black; /* Text color */
     cursor: pointer; /* Add a mouse pointer on hover */
     border-radius: 10px; /* Rounded corners */
@@ -327,35 +375,26 @@ a {
 }
 
 #myBtn:hover {
-    background-color:yellow; /* Add a dark-grey background on hover */
-    border: #FF5852 2px solid;
+    background-color:#845ec2; /* Add a dark-grey background on hover */
+    /* border: #FF5852 2px solid; */
 }
 
-.custom-shadow {
-    box-shadow: 0 .1rem 0.1rem rgba(0,0,0,.15)!important;
+/* for icon */
+.icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
 }
 
-p>code {
-    background-color: rgb(245, 239, 212);
-    color: #000;
-    border-radius: 4px;
-    padding: 1px 1px;
-    margin: 0px 1px;
+#content {
+    background-color: white;
+    padding-bottom: 0em;
+    margin-bottom: 0em;
 }
 
-.footerest {
-    /* background-color: #f5e1c8; */
-    font-size: 0.5em;
-    font-weight: bold;
-}
-
-blockquote {
-    padding-left: 10px;
-    border-left: 5px solid #dee2e6;
-    color: #6a737d;
-    margin-left: 10px;
-}
-
-strong {
-    color: black;
+#header-id {
+    /* height: calc(100vh - 0px); */
+    background-color: white;
 }
