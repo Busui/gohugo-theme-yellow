@@ -206,6 +206,10 @@ a.custom-a:hover {
     border-bottom: 2px #FF9000 solid;
 }
 
+a.custom-badge-dark:hover {
+    color: #000;
+}
+
 .custom-summary-color {
     background-color: #f7f5ec;
 }
