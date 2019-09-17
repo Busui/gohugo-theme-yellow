@@ -1,4 +1,10 @@
-[demo](https://busui.github.io)
+There is the theme's [demo](https://codepool.top)
+
+应用了本主题的网站：
+
+1. [Codepool](https://codepool.top)
+
+---
 
 ## 一、安装Yellow
 

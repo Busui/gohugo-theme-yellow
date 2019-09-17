@@ -1,0 +1,17 @@
+color = [
+    "border-custom-color0",
+    "border-custom-color1",
+    "border-custom-color2",
+    "border-custom-color3",
+    "border-custom-color4",
+    "border-custom-color5",
+    "border-custom-color6",
+    "border-warning",
+    "border-primary",
+    "border-secondary",
+    "border-success",
+    "border-danger",
+    "border-info",
+    "border-dark",
+    "border-custom-color1"
+]

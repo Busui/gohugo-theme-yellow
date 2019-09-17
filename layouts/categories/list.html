@@ -1,23 +1,31 @@
 {{ define "main" }}
-<div class="row justify-content-center my-2 pb-4 my-md-4" style="height: 60vh;">
-    <div class="col-10" id="accordionExample">
+{{ $color := .Site.Data.borderColor.color }}
+{{ $colorCount := 0 }}
+<div class="row justify-content-center my-2 pb-4 my-md-4" style="min-height: 60vh;">
+    <div class="col-10 bg-light" id="accordionExample">
         {{ range $key, $value := .Site.Taxonomies.categories }}
-            <div class="py-1">
-                <div class="px-auto badge badge-pill badge-warning text-left" id="{{ $key }}-id" style="width: 100%;">  
-                    <button class="btn py-0" type="button" data-toggle="collapse" data-target="#{{ $key }}"
+            <div class="pt-2">
+                <div class="px-2 py-1 text-left custom-border {{ index $color $colorCount}} custom-border-hover" id="{{ $key }}-id" style="width: 100%;transform: rotate(0);">  
+                    <div class="py-0 stretched-link" data-toggle="collapse" data-target="#{{ $key }}"
                         aria-expanded="true" aria-controls="{{ $key }}">
                         <svg class="icon" aria-hidden="true" style="font-size: 18px;">
                             <use xlink:href="#icon-shouzhi2"></use>
                         </svg>
-                        <span class="badge badge-light" style="font-size: 16px;">{{ $key }}</span>
-                    </button>
+                        <span style="font-size: 16px;">{{ $key }}</span>
+                    </div>
                 </div>
+                {{ $colorCount = add $colorCount 1 }}
+                {{ $colorCount = mod $colorCount (len $color) }}
 
-                <div id="{{ $key }}" class="collapse ml-4 mt-2 rounded" aria-labelledby="{{ $key }}-id" data-parent="#accordionExample" style="background-color: rgb(232, 231, 215);">
+                <div id="{{ $key }}" class="collapse ml-4 mt-2 bg-white" aria-labelledby="{{ $key }}-id" data-parent="#accordionExample">
                     {{ range $value.Pages }}
-                        <ul hugo-nav="{{ .RelPermalink}}" class="my-1 badge badge-light ml-1">
-                            <a href="{{ .Permalink}}" class="text-dark"  style="font-size: 18px;">{{ .LinkTitle }}</a>
-                        </ul>
+                        <article class="py-1 pl-3" style="width: 100%;transform: rotate(0);">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-wenzhang2"></use>
+                            </svg>
+                            <a href="{{ .RelPermalink}}" class="text-dark stretched-link custom-a">{{ .LinkTitle }}</a>
+                            <div class="text-muted d-inline float-right pr-2">{{- .Date.Format "2006-01-02" -}}</span>
+                        </article>
                         <div class="w-100"></div>
                     {{ end }}
                 </div>           

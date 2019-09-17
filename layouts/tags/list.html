@@ -1,5 +1,5 @@
 {{ define "home_header" }}
-<div class="row justify-content-between">
+<div class="row justify-content-between px-4">
     <div class="col-12 col-sm-4 col-md-4 order-12 order-sm-1 pl-1 pl-md-2 pt-1">
         <div style="font-weight: bold;">
             <svg class="icon" aria-hidden="true">
@@ -12,8 +12,8 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb py-1 justify-content-end w-auto bg-transparent">
                 {{ range .Site.Menus.main }}
-                    <li class="breadcrumb-item btn btn-warning custom-btn" aria-current="page">
-                        <a class="text-dark" href="{{ .URL }}">
+                    <li class="breadcrumb-item btn btn-warning custom-btn" aria-current="page" style="transform: rotate(0);">
+                        <a class="text-dark stretched-link" href="{{ .URL }}">
                             <span>{{ .Name }}</span>
                         </a>
                     </li>
@@ -32,7 +32,7 @@
 </div>
 {{ end }}
 {{ define "main" }}
-<div class="row justify-content-center" style="height: 70vh;">
+<div class="row justify-content-center px-4" style="min-height: 70vh;">
     <div class="col-12 col-md-10 pb-5">
         <div class="gradient-box">
             <div>

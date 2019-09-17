@@ -27,40 +27,39 @@
     {{ end }}
 
     <!-- third-generation iPad with high-resolution Retina display: -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ .Site.BaseURL }}/img/favicon144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ relURL ($.Site.BaseURL) }}img/favicon144.png">
     <!-- iPhone with high-resolution Retina display: -->
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ .Site.BaseURL }}/img/favicon114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ relURL ($.Site.BaseURL) }}img/favicon114.png">
     <!-- first- and second-generation iPad: -->
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ .Site.BaseURL }}/img/favicon72.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ relURL ($.Site.BaseURL) }}img/favicon72.png">
     <!-- non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
-    <link rel="apple-touch-icon-precomposed" href="{{ .Site.BaseURL }}/img/favicon57.png">
+    <link rel="apple-touch-icon-precomposed" href="{{ relURL ($.Site.BaseURL) }}img/favicon57.png">
     <!-- basic favicon -->
-    <link rel="shortcut icon" href="{{ .Site.BaseURL }}/img/favicon32.png">
+    <link rel="shortcut icon" href="{{ relURL ($.Site.BaseURL) }}img/favicon32.png">
 
     {{ with .OutputFormats.Get "RSS" }}
       <link href="{{ .RelPermalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />
       <link href="{{ .RelPermalink }}" rel="feed" type="application/rss+xml" title="{{ $.Site.Title }}" />
     {{ end }}
 
-    {{/* NOTE: These Hugo Internal Templates can be found starting at https://github.com/spf13/hugo/blob/master/tpl/tplimpl/template_embedded.go#L158 */}}
-    {{- template "_internal/opengraph.html" . -}}
-    {{- template "_internal/google_news.html" . -}}
-    {{- template "_internal/schema.html" . -}}
-    {{- template "_internal/twitter_cards.html" . -}}
-
+    {{/* NOTE: All of these Hugo Internal Templates can be found starting at https://github.com/spf13/hugo/blob/master/tpl/tplimpl/template_embedded.go#L158 */}}
     {{ if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env "production")  }}
+      {{- template "_internal/opengraph.html" . -}}
+      {{- template "_internal/google_news.html" . -}}
+      {{- template "_internal/schema.html" . -}}
+      {{- template "_internal/twitter_cards.html" . -}}
       {{ template "_internal/google_analytics_async.html" . }}
     {{ end }}
   </head>
 
   <body>
        <script>
-          if (/android/i.test(navigator.userAgent) || /mobile/i.test(navigator.userAgent))
+          if (/android/i.test(navigator.userAgent) || /(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent) || /mobile/i.test(navigator.userAgent))
           {
               document.body.classList.add('custom-mobile');
           }
        </script>
-      <div class="container" id="content">
+      <div class="container px-0" id="content">
         {{ block "home_header" . }}{{ partial "home_header.html" .}}{{ end }}
         {{ block "main" . }}{{ end }}
         {{ block "footer" . }}{{ partialCached "footer.html" . }}{{ end }}

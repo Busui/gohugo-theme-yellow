@@ -1,5 +1,5 @@
 {{ define "main" }}
-<main class="container-fluid px-1 px-sm-3">
+<main class="container-fluid px-4">
   <article id="main">
     <h1 id="title">{{ .Title }}</h1>
     <div class="row justify-content-end mx-2 mx-sm-4">
@@ -60,7 +60,7 @@
         <div class="col-12 col-md-5">
           <span><svg class="icon" aria-hidden="true">
               <use xlink:href="#icon-PrevioustrackFill"></use>
-            </svg>上一篇
+            </svg>{{- .Site.Params.previousPostName -}}
             <a class="text-dark custom-a" href="{{.Permalink}}"> {{.Title}}</a>
           </span>
         </div>
@@ -75,7 +75,7 @@
           {{ end }}
             <svg class="icon" aria-hidden="true">
               <use xlink:href="#icon-NexttrackFilled"></use>
-            </svg>下一篇
+            </svg>{{- .Site.Params.nextPostName -}}
             <a class="text-dark custom-a" href="{{.Permalink}}"> {{.Title}}</a>
           </span>
         </div>

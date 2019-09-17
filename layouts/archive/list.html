@@ -7,7 +7,7 @@
     <div class="hr-box-sm hr-blue "></div>
     <div class="hr-box-sm hr-red"></div>
 </div>
-<div class="row justify-content-center">
+<div class="row justify-content-center px-3">
     <div class="col-12 col-md-10 pb-5">
         <div class="gradient-box">
             <div>
@@ -16,12 +16,12 @@
                     <section class="ml-2 mt-3"><span class="font-weight-bold">{{ .Key }}</span></section>
                         {{ $year := printf "%s-" .Key }}
                         {{ range .Pages }}
-                        <div class="row justify-content-center px-2 ml-2 ml-md-4 pb-1">
+                        <div class="row justify-content-center px-2 pl-2 pl-md-4 pb-1">
                             <div class="col-8">
                                 <svg class="icon" aria-hidden="true">
                                     <use xlink:href="#icon-wenzhang2"></use>
                                 </svg>
-                                <a class="text-dark custom-a" href="{{ .Permalink }}">{{ .Title }}</a>
+                                <a class="text-dark custom-a" href="{{ .RelPermalink }}">{{ .Title }}</a>
                             </div>
                             <div class="col-4">
                                 <span class="float-right text-muted">

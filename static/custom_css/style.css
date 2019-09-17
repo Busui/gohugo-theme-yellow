@@ -12,7 +12,7 @@ table {
 body {
     font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
     font-size: 18px;
-    background-color: #f7f5ec;
+    background-color: #f8f9fa!important;
 }
 
 P,
@@ -186,6 +186,11 @@ body.custom-mobile .custom-sumary-title {
     font-size: 1.1em;
 }
 
+body.custom-mobile .active {
+    font-weight: bolder;
+    border-bottom: 1px solid #FFF;
+}
+
 
 
 /* for active */
@@ -216,6 +221,14 @@ a.custom-badge-dark:hover {
 
 .custom-shadow {
     box-shadow: 0 .1rem 0.1rem rgba(0,0,0,.15)!important;
+}
+
+.custom-border-hover:hover {
+    /* background-color: #FF9000; */
+    font-weight: bolder;
+    background-color: #FBD786;
+    /* border-top: 3px solid;
+    border-bottom: 3px solid; */
 }
 
 /* for footer.html */
@@ -286,6 +299,14 @@ a.custom-badge-dark:hover {
     background-color: #FFC75F;
 }
 
+.custom-border-top {
+    border-top: 10px solid #f8f9fa;
+}
+
+.custom-border {
+    border-left: 6px solid;
+    border-right: 6px solid;
+}
 
 
 /* overwrite bootstrap */
@@ -401,4 +422,34 @@ a.custom-badge-dark:hover {
 #header-id {
     /* height: calc(100vh - 0px); */
     background-color: white;
+}
+
+
+/* color dict which used by data folder */
+.border-custom-color0 {
+    border-color: #f5af19;
+}
+
+.border-custom-color1 {
+    border-color: #c471ed;  /* fallback for old browsers */
+}
+
+.border-custom-color2 {
+    border-color: #ee9ca7;
+}
+
+.border-custom-color3 {
+    border-color: #2193b0;
+}
+
+.border-custom-color4 {
+    border-color: #C6FFDD;  /* fallback for old browsers */
+}
+
+.border-custom-color5 {
+    border-color: #FBD786;
+}
+
+.border-custom-color6 {
+    border-color: #f7797d;
 }
