@@ -232,8 +232,13 @@ a.custom-badge-dark:hover {
 }
 
 /* for footer.html */
+.custom-footer {
+    text-align: center;
+    font-size: 0.9em;
+}
+
 .custom-footer-a {
-    color: #FFC75F;
+    color: #6c757d;
 }
 
 .page-item.active {

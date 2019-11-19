@@ -18,13 +18,10 @@
     {{ end }}
 
     {{ $stylesheet := .Site.Data.webpack_assets.app }}
-    {{ with $stylesheet.css }}
-      <link href="{{ relURL (printf "%s"  .) }}" rel="stylesheet">
+    {{ range $stylesheet.css }}
+      <link href="{{ relURL ($.Site.BaseURL) }}{{ . }}" rel="stylesheet">
     {{ end }}
 
-    {{ range .Site.Params.custom_css }}
-      <link rel="stylesheet" href="{{ relURL ($.Site.BaseURL) }}{{ . }}">
-    {{ end }}
 
     <!-- third-generation iPad with high-resolution Retina display: -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ relURL ($.Site.BaseURL) }}img/favicon144.png">
