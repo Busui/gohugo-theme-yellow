@@ -15,3 +15,15 @@ color = [
     "border-dark",
     "border-custom-color1"
 ]
+
+bgcolor = [
+    "bgcolor1",
+    "bgcolor2",
+    "bgcolor3",
+    "bgcolor4",
+    "bgcolor5",
+    "bgcolor6",
+    "bgcolor7",
+    "bgcolor8"
+
+]

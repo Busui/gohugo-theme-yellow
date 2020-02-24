@@ -231,6 +231,14 @@ a.custom-badge-dark:hover {
     border-bottom: 3px solid; */
 }
 
+.custom-buttom {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    background-color: white;
+}
+
 /* for footer.html */
 .custom-footer {
     text-align: center;
@@ -457,4 +465,36 @@ a.custom-badge-dark:hover {
 
 .border-custom-color6 {
     border-color: #f7797d;
+}
+
+.bgcolor1 {
+    background-color: #f7797d;
+}
+
+.bgcolor2 {
+    background-color: #FBD786;
+}
+
+.bgcolor3 {
+    background-color: #C6FFDD;
+}
+
+.bgcolor4 {
+    background-color: #ce7426;
+}
+
+.bgcolor5 {
+    background-color: #f5af19;
+}
+
+.bgcolor6 {
+    background-color: #c471ed;
+}
+
+.bgcolor7 {
+    background-color: rgb(61, 216, 208);
+}
+
+.bgcolor8 {
+    background-color: #2193b0;
 }

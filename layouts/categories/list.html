@@ -4,7 +4,7 @@
 <div class="row justify-content-center my-2 pb-4 my-md-4" style="min-height: 60vh;">
     <div class="col-10 bg-light" id="accordionExample">
         {{ range $key, $value := .Site.Taxonomies.categories }}
-            <div class="pt-2">
+            <button class="custom-buttom w-100 mt-2" style="background-color:#f8f9fa; outline-style: none;">
                 <div class="px-2 py-1 text-left custom-border {{ index $color $colorCount}} custom-border-hover" id="{{ $key }}-id" style="width: 100%;transform: rotate(0);">  
                     <div class="py-0 stretched-link" data-toggle="collapse" data-target="#{{ $key }}"
                         aria-expanded="true" aria-controls="{{ $key }}">
@@ -19,7 +19,7 @@
 
                 <div id="{{ $key }}" class="collapse ml-4 mt-2 bg-white" aria-labelledby="{{ $key }}-id" data-parent="#accordionExample">
                     {{ range $value.Pages }}
-                        <article class="py-1 pl-3" style="width: 100%;transform: rotate(0);">
+                        <article class="py-1 pl-3 text-left" style="width: 100%;transform: rotate(0);">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-wenzhang2"></use>
                             </svg>
@@ -29,7 +29,7 @@
                         <div class="w-100"></div>
                     {{ end }}
                 </div>           
-            </div>
+            </button>
         {{ end }}
     </div>
 </div>
