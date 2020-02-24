@@ -191,6 +191,10 @@ body.custom-mobile .active {
     border-bottom: 1px solid #FFF;
 }
 
+body.custom-mobile .custom-summary-height {
+    min-height: 200px;
+}
+
 
 
 /* for active */
@@ -219,6 +223,9 @@ a.custom-badge-dark:hover {
     background-color: #f7f5ec;
 }
 
+.custom-summary-height{
+    min-height: 350px;
+}
 .custom-shadow {
     box-shadow: 0 .1rem 0.1rem rgba(0,0,0,.15)!important;
 }
