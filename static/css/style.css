@@ -474,28 +474,29 @@ a.custom-badge-dark:hover {
     border-color: #f7797d;
 }
 
-.bgcolor1 {
-    background-color: #f7797d;
-}
 
-.bgcolor2 {
+.bgcolor1 {
     background-color: #FBD786;
 }
 
-.bgcolor3 {
+.bgcolor2 {
     background-color: #C6FFDD;
 }
 
+.bgcolor3 {
+    background-color: #f7797d;
+}
+
 .bgcolor4 {
-    background-color: #ce7426;
+    background-color: #c471ed;
 }
 
 .bgcolor5 {
-    background-color: #f5af19;
+    background-color: #ce7426;
 }
 
 .bgcolor6 {
-    background-color: #c471ed;
+    background-color: #f5af19;
 }
 
 .bgcolor7 {
