@@ -4,32 +4,34 @@
 <div class="row justify-content-center my-2 pb-4 my-md-4" style="min-height: 60vh;">
     <div class="col-10 bg-light" id="accordionExample">
         {{ range $key, $value := .Site.Taxonomies.categories }}
-            <button class="custom-buttom w-100 mt-2" style="background-color:#f8f9fa; outline-style: none;">
-                <div class="px-2 py-1 text-left custom-border {{ index $color $colorCount}} custom-border-hover" id="{{ $key }}-id" style="width: 100%;transform: rotate(0);">  
-                    <div class="py-0 stretched-link" data-toggle="collapse" data-target="#{{ $key }}"
-                        aria-expanded="true" aria-controls="{{ $key }}">
-                        <svg class="icon" aria-hidden="true" style="font-size: 18px;">
-                            <use xlink:href="#icon-shouzhi2"></use>
-                        </svg>
-                        <span style="font-size: 16px;">{{ $key }}</span>
-                    </div>
-                </div>
-                {{ $colorCount = add $colorCount 1 }}
-                {{ $colorCount = mod $colorCount (len $color) }}
-
-                <div id="{{ $key }}" class="collapse ml-4 mt-2 bg-white" aria-labelledby="{{ $key }}-id" data-parent="#accordionExample">
-                    {{ range $value.Pages }}
-                        <article class="py-1 pl-3 text-left" style="width: 100%;transform: rotate(0);">
-                            <svg class="icon" aria-hidden="true">
-                                <use xlink:href="#icon-wenzhang2"></use>
+                <button class="custom-buttom w-100 mt-2" style="background-color:#f8f9fa; outline-style: none;">
+                    <div class="px-2 py-1 text-left custom-border {{ index $color $colorCount}} custom-border-hover" id="{{ $key }}-id" style="width: 100%;transform: rotate(0);">  
+                        <div class="py-0 stretched-link" data-toggle="collapse" data-target="#{{ $key }}"
+                            aria-expanded="true" aria-controls="{{ $key }}">
+                            <svg class="icon" aria-hidden="true" style="font-size: 18px;">
+                                <use xlink:href="#icon-shouzhi2"></use>
                             </svg>
-                            <a href="{{ .RelPermalink}}" class="text-dark stretched-link custom-a">{{ .LinkTitle }}</a>
-                            <div class="text-muted d-inline float-right pr-2">{{- .Date.Format "2006-01-02" -}}</span>
-                        </article>
-                        <div class="w-100"></div>
-                    {{ end }}
-                </div>           
-            </button>
+                            <span style="font-size: 16px;">{{ $key }}</span>
+                        </div>
+                    </div>
+                    {{ $colorCount = add $colorCount 1 }}
+                    {{ $colorCount = mod $colorCount (len $color) }}
+
+                    <div id="{{ $key }}" class="collapse ml-4 mt-2 bg-white" aria-labelledby="{{ $key }}-id" data-parent="#accordionExample">
+                        {{ range $value.Pages }}
+                            {{ if not .Draft }}
+                                <article class="py-1 pl-3 text-left" style="width: 100%;transform: rotate(0);">
+                                    <svg class="icon" aria-hidden="true">
+                                        <use xlink:href="#icon-wenzhang2"></use>
+                                    </svg>
+                                    <a href="{{ .RelPermalink}}" class="text-dark stretched-link custom-a">{{ .LinkTitle }}</a>
+                                    <div class="text-muted d-inline float-right pr-2">{{- .Date.Format "2006-01-02" -}}</span>
+                                </article>
+                                <div class="w-100"></div>
+                            {{ end }}
+                        {{ end }}
+                    </div>           
+                </button>
         {{ end }}
     </div>
 </div>
