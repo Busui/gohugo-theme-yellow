@@ -18,6 +18,7 @@ body {
 P,
 li {
     line-height: 1.7;
+    text-align: justify !important;
 }
 
 H1 {
@@ -139,7 +140,8 @@ strong {
 
 /* overwrite default */
 a {
-    color: #845ec2;
+    /* color: #845ec2; */
+    color: #c15e70;
 }
 
 a:hover {

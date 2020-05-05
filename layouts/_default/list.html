@@ -1,7 +1,7 @@
 {{ define "main" }}
 {{ $color := .Site.Data.borderColor.bgcolor }}
 {{ $colorCount := 0 }}
-<main class="container-fluid px-0">
+<main>
     <section>
         {{ with .Content }}
             <section>
@@ -9,8 +9,8 @@
             </section>
         {{ end }}
         {{ range .Paginator.Pages }}
-        <article>
-            <div class="container-fluid mb-2 mt-2 mt-sm-4 py-2 bg-white custom-border-top position-relative">
+        <article class="container" id="content">
+            <div class="mt-3 py-2 bg-white position-relative">
                 <div class="row justify-content-center position-static">
                     <div class="col text-center position-static">
                         <div class="custom-sumary-title pt-1 pt-md-2 position-static">
@@ -47,8 +47,10 @@
         </article>
         {{ end }}
     </section>
-    <div class="row justify-content-center mt-4 mt-md-5">
-        {{- template "_internal/pagination.html" . -}}
+    <div class="container" id="content">
+        <div class="row justify-content-center">
+            {{- template "_internal/pagination.html" . -}}
+        </div>
     </div>
 </main>
 {{ end }}

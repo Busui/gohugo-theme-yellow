@@ -1,4 +1,4 @@
-{{ define "main" }}
+{{ define "other_main" }}
 {{- if gt (len .Site.Taxonomies.tags) 0 -}}
     {{- $fontUnit := "rem" -}}
     {{- $largestFontSize := 1.9 -}}
@@ -20,7 +20,7 @@
     {{- $sizeStep := ( $.Scratch.Get "sizeStep" ) -}}
     <!--<div>Font step: {{ $sizeStep }}</div>-->
     <div class="row justify-content-center pt-2 pb-5 mx-1">
-        <div class="col-11 shadow-sm border-top pb-2" style="min-height: 60vh">
+        <div class="col-md-11 col-12 shadow-sm border-top pb-2" style="min-height: 60vh">
             <div class="p-2 px-md-4 mt-5 mb-3" style="text-align: center;">目前共计{{ len .Site.Taxonomies.tags }}个标签</div>
             {{ range .Site.Taxonomies.tags }}
             {{ $currentTagCount := .Count }}

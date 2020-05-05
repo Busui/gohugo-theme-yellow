@@ -8,7 +8,7 @@
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
-    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="viewport" content="width=device-width,minimum-scale=1, user-scalable=no">
     {{ hugo.Generator }}
     {{/* NOTE: For Production make sure you add `HUGO_ENV="production"` before your build command */}}
     {{ if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env "production")  }}
@@ -56,12 +56,15 @@
               document.body.classList.add('custom-mobile');
           }
        </script>
-      <div class="container px-0" id="content">
+      <div class="container" id="content">
         {{ block "home_header" . }}{{ partial "home_header.html" .}}{{ end }}
-        {{ block "main" . }}{{ end }}
+        {{ block "other_main" . }}{{ end }}
+      </div>
+      {{ block "main" . }}{{ end }}
+      <div class="container mt-2" id="content">
         {{ block "footer" . }}{{ partialCached "footer.html" . }}{{ end }}
       </div>
-      {{ block "backtotop" .}}{{ partial "backToTop.html" }}{{ end }}
+      <!-- {{ block "backtotop" .}}{{ partial "backToTop.html" }}{{ end }} -->
       {{ block "scripts" . }}{{ partialCached "site-scripts.html" . }}{{ end }}
       {{ if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env "production")  }}
         {{ range .Site.Params.custom_js }}

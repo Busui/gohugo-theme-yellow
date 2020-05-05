@@ -1,5 +1,5 @@
 {{ define "main" }}
-<main class="container-fluid px-4">
+<main class="container" id="content">
   <article id="main">
     <h1 id="title">{{ .Title }}</h1>
     <div class="row justify-content-end mx-2 mx-sm-4">
@@ -38,7 +38,7 @@
     </div>
     <br>
     <div class="row">
-      <div class="col-12 px-2 px-md-3">
+      <div class="col-12 px-3">
           {{ .Content }}
           {{- if .Page.Params.copyright -}}
           {{- partial "postCopyRight.html" . -}}

@@ -1,8 +1,8 @@
-{{ define "main" }}
+{{ define "other_main" }}
 {{ $color := .Site.Data.borderColor.color }}
 {{ $colorCount := 0 }}
 <div class="row justify-content-center my-2 pb-4 my-md-4" style="min-height: 60vh;">
-    <div class="col-10 bg-light" id="accordionExample">
+    <div class="col-md-10 col-11 bg-light" id="accordionExample">
         {{ range $key, $value := .Site.Taxonomies.categories }}
                 <button class="custom-buttom w-100 mt-2" style="background-color:#f8f9fa; outline-style: none;">
                     <div class="px-2 py-1 text-left custom-border {{ index $color $colorCount}} custom-border-hover" id="{{ $key }}-id" style="width: 100%;transform: rotate(0);">  
