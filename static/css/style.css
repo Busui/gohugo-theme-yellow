@@ -240,6 +240,10 @@ a.custom-badge-dark:hover {
     border-bottom: 3px solid; */
 }
 
+.custom-border-top {
+    border-top: 10px solid #f8f9fa!important;
+}
+
 .custom-buttom {
     margin: 0;
     padding: 0;
